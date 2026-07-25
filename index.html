@@ -3,49 +3,112 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cuebird — Support</title>
+<title>Cuebird — Routines for brains that don't feel time</title>
+<meta name="description" content="Cuebird turns your routine into small, timed, color-coded steps. Built for neurodivergent adults. Coming soon to the App Store.">
+<meta property="og:title" content="Cuebird">
+<meta property="og:description" content="Routines for brains that don't feel time. Coming soon to the App Store.">
+<meta property="og:image" content="https://cuebird.net/cue.png">
+<meta property="og:url" content="https://cuebird.net/">
+<link rel="icon" href="cue.png">
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    --bg1: #1c1a33; --bg2: #0e0d1c; --ink: #f0eff8; --dim: #a5a3b8;
+    --lav: #8c91fa; --coral: #ff7361; --amber: #ffb040;
+    --mint: #59d985; --sky: #54a8ff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    max-width: 640px; margin: 0 auto; padding: 48px 24px;
-    color: #1c1c2e; background: #fdfdfe;
+    font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(175deg, var(--bg1), var(--bg2) 70%);
+    color: var(--ink); min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; padding: 64px 24px 48px;
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #ececf4; background: #17162a; }
-    a { color: #9d8cff; }
+  .cue { width: 150px; height: auto; animation: float 4.5s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
+  @media (prefers-reduced-motion: reduce) { .cue { animation: none } }
+  h1 { font-size: clamp(2.6rem, 8vw, 4rem); font-weight: 800; margin-top: 18px; letter-spacing: -0.02em; }
+  .rainbow {
+    width: 130px; height: 6px; border-radius: 3px; margin: 18px auto 22px;
+    background: linear-gradient(90deg, var(--coral), var(--amber), var(--mint), var(--sky), var(--lav));
   }
-  h1 { font-size: 2em; margin-bottom: 0.2em; }
-  .tagline { color: #8a8a9a; margin-top: 0; }
-  a { color: #6b5ce7; }
+  .tagline { font-size: clamp(1.15rem, 4vw, 1.5rem); font-weight: 650; }
+  .sub {
+    color: var(--dim); max-width: 470px; margin: 14px auto 30px;
+    font-size: 1.02rem; line-height: 1.6;
+  }
+  .soon {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(140,145,250,0.13); border: 1px solid rgba(140,145,250,0.4);
+    color: var(--ink); border-radius: 999px; padding: 12px 22px;
+    font-weight: 650; font-size: 1rem;
+  }
+  .soon .dot {
+    width: 9px; height: 9px; border-radius: 50%; background: var(--mint);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: 0.35 } }
+  .features {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    max-width: 780px; margin: 52px auto 0;
+  }
   .card {
-    border: 1px solid rgba(128,128,150,0.25); border-radius: 14px;
-    padding: 18px 22px; margin: 18px 0;
+    flex: 1 1 200px; max-width: 240px; text-align: left;
+    background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 18px; padding: 20px;
   }
-  footer { margin-top: 48px; font-size: 0.85em; color: #8a8a9a; }
+  .card .emoji { font-size: 1.5rem; }
+  .card h3 { font-size: 1.02rem; margin: 8px 0 6px; }
+  .card p { color: var(--dim); font-size: 0.92rem; line-height: 1.5; }
+  .shot {
+    width: min(320px, 78vw); margin-top: 60px; border-radius: 42px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .caption { color: var(--dim); font-size: 0.9rem; margin-top: 16px; }
+  footer {
+    margin-top: 72px; color: var(--dim); font-size: 0.88rem; line-height: 2;
+  }
+  footer a { color: var(--lav); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-<h1>🐦 Cuebird</h1>
-<p class="tagline">Routines for brains that don't feel time.</p>
+  <img class="cue" src="cue.png" alt="Cue, the Cuebird mascot — a round lavender bird with a rainbow tail">
+  <h1>Cuebird</h1>
+  <div class="rainbow" role="presentation"></div>
+  <p class="tagline">Routines for brains that don't feel time.</p>
+  <p class="sub">Cuebird turns any routine into small, timed, color-coded steps —
+  the whole screen becomes the color of what you're doing, real alarms get you
+  started, and it learns how long your morning <em>actually</em> takes.
+  Built for neurodivergent adults.</p>
+  <span class="soon"><span class="dot"></span>Coming soon to the App&nbsp;Store</span>
 
-<p>Cuebird is an iOS routine timer built for neurodivergent adults.
-It turns any routine into small, timed, color-coded steps — the whole screen
-becomes the current step's color, real alarms start your routines on schedule,
-and Cuebird learns how long your routines <em>actually</em> take.</p>
+  <div class="features">
+    <div class="card">
+      <span class="emoji">🎨</span>
+      <h3>Time you can see</h3>
+      <p>Each step fills the screen with its color. Glanceable from across the room — no reading required.</p>
+    </div>
+    <div class="card">
+      <span class="emoji">⏰</span>
+      <h3>Real alarms</h3>
+      <p>Rings through silent mode and starts the routine for you. Starting is the hardest part.</p>
+    </div>
+    <div class="card">
+      <span class="emoji">❤️</span>
+      <h3>No shame</h3>
+      <p>Skip, pause, +1 min. Every finish counts, and your streak forgives an off day.</p>
+    </div>
+  </div>
 
-<div class="card">
-  <strong>Need help, found a bug, or have an idea?</strong><br>
-  Email <a href="mailto:mikepetrillo1775@gmail.com">mikepetrillo1775@gmail.com</a>
-  and I'll get back to you as soon as I can.
-</div>
+  <img class="shot" src="screen.png" alt="Cuebird running a Morning routine — the whole screen is the step's color with a large countdown">
+  <p class="caption">One-time purchase. No subscription, no ads, no accounts, no data collection.</p>
 
-<div class="card">
-  <strong>Privacy</strong><br>
-  Cuebird collects nothing — no accounts, no analytics, no ads.
-  Read the full <a href="privacy.html">privacy policy</a>.
-</div>
-
-<footer>Copyright © 2026 Michael Petrillo. All rights reserved.</footer>
+  <footer>
+    <a href="mailto:mikepetrillo1775@gmail.com">Contact</a> ·
+    <a href="privacy.html">Privacy</a><br>
+    Copyright © 2026 Michael Petrillo. All rights reserved.
+  </footer>
 </body>
 </html>
