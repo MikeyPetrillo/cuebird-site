@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["X9G7F875V9.com.havokholdings.cuebird"],
+        "components": [
+          { "/": "/r", "comment": "Shared routine links" },
+          { "/": "/r/*" }
+        ],
+        "paths": ["/r", "/r/*"]
+      }
+    ]
+  }
+}
