@@ -6,9 +6,11 @@
         "appIDs": ["X9G7F875V9.com.havokholdings.cuebird"],
         "components": [
           { "/": "/r", "comment": "Shared routine links" },
-          { "/": "/r/*" }
+          { "/": "/r/*" },
+          { "/": "/j", "comment": "Household invite links: the QR and the sent invite" },
+          { "/": "/j/*" }
         ],
-        "paths": ["/r", "/r/*"]
+        "paths": ["/r", "/r/*", "/j", "/j/*"]
       }
     ]
   }
