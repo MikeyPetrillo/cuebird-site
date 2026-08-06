@@ -11,5 +11,12 @@
   "compatibility_date": "2026-08-06",
   "assets": {
     "directory": "./"
-  }
+  },
+  // The domains live HERE rather than in the dashboard, so the mapping
+  // is reviewable, survives an account being clicked around in, and
+  // comes back by itself if anyone ever deletes it by accident.
+  "routes": [
+    { "pattern": "cuebird.net", "custom_domain": true },
+    { "pattern": "www.cuebird.net", "custom_domain": true }
+  ]
 }
