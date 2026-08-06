@@ -1,0 +1,15 @@
+{
+  // Cuebird's marketing site, served as static assets.
+  //
+  // It carries two things the APP depends on, not just marketing:
+  //   /.well-known/apple-app-site-association  authorizes /r and /j so
+  //     iOS hands routine links and household invite codes to Cuebird
+  //   /j  the page someone lands on when they scan an invite code
+  //     without having the app yet
+  // If this site is down, invites stop routing. Treat it accordingly.
+  "name": "cuebird-site",
+  "compatibility_date": "2026-08-06",
+  "assets": {
+    "directory": "./"
+  }
+}
