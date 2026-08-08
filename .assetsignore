@@ -11,3 +11,8 @@ node_modules
 node_modules/**
 .DS_Store
 .assetsignore
+
+# deploy config, not for the public
+wrangler.jsonc
+*.md
+README*
