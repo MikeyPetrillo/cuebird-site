@@ -1,0 +1,13 @@
+# Never publish these to cuebird.net. The site serves the whole directory
+# (wrangler.jsonc assets.directory = "./"), which otherwise uploads the git
+# repo and wrangler scratch dir as public files: cuebird.net/.git/config was
+# fetchable, exposing the full source and history. .well-known is NOT listed
+# here, so the Apple App Site Association keeps serving.
+.git
+.git/**
+.wrangler
+.wrangler/**
+node_modules
+node_modules/**
+.DS_Store
+.assetsignore
