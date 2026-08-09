@@ -4,25 +4,47 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cuebird FAQ</title>
+<link rel="icon" href="cue.png">
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    color-scheme: light dark;
+    --ink: #1c1c2e;
+    --bg: #f7f6fb;
+    --dim: #5c5b70;
+    --lav: #6b5ce7;
+  }
   body {
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    max-width: 640px; margin: 0 auto; padding: 48px 24px;
-    color: #1c1c2e; background: #fdfdfe;
+    font: 17px/1.6 ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 640px; margin: 0 auto; padding: 40px 24px 48px;
+    color: var(--ink); background: var(--bg);
   }
   @media (prefers-color-scheme: dark) {
-    body { color: #ececf4; background: #17162a; }
-    a { color: #9d8cff; }
+    :root { --ink: #ececf4; --bg: #17162a; --dim: #a5a3b8; --lav: #9d8cff; }
   }
-  h1 { font-size: 1.8em; margin-bottom: 0.2em; }
-  h2 { font-size: 1.2em; margin-top: 1.6em; }
-  a { color: #6b5ce7; }
-  footer { margin-top: 48px; font-size: 0.85em; color: #8a8a9a; }
+  .top {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 28px; font-size: 0.95rem;
+  }
+  .top img { width: 36px; height: auto; }
+  .top a { color: var(--lav); text-decoration: none; font-weight: 650; }
+  .top a:hover { text-decoration: underline; }
+  h1 { font-size: 1.8em; margin: 0 0 0.35em; letter-spacing: -0.02em; }
+  .intro { color: var(--dim); margin: 0 0 1.2em; }
+  h2 { font-size: 1.15em; margin-top: 1.7em; letter-spacing: -0.01em; }
+  a { color: var(--lav); }
+  footer { margin-top: 48px; font-size: 0.85em; color: var(--dim); }
+  footer a { text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
+<div class="top">
+  <img src="cue.png" alt="">
+  <a href="index.html">Cuebird</a>
+</div>
+
 <h1>Cuebird FAQ</h1>
+<p class="intro">Plain answers for the questions support actually gets.</p>
 
 <h2>What is Cuebird?</h2>
 <p>A routine timer for brains that don't feel time. You break a routine
@@ -67,7 +89,7 @@ history arrive on their own. No login, because there are no accounts.</p>
 up, not to punish you for resting. Cuebird never shows a score that shames
 you, and that's a design rule, not an accident.</p>
 
-<h2>What is a household?</h2>
+<h2 id="household">What is a household?</h2>
 <p>A link between the people you live with. When one of you starts a routine,
 everyone else gets a gentle offer to jump in, and joining drops you exactly
 where the others already are rather than back at step one. Declining is
@@ -96,6 +118,10 @@ along, so nobody is left three steps behind wondering what happened. If you
 would rather go at your own speed, "Take my own pace" is one tap and your
 routine simply keeps running. Nobody is told you did it, and you can do it at
 any point.</p>
+
+<h2>Can a routine start out shared?</h2>
+<p>Yes. When you make a routine, Cuebird offers your households right there, so
+it can begin life shared instead of being made and then shared later.</p>
 
 <h2>How do I invite someone, and how do I leave?</h2>
 <p>Both live behind the household button on the home screen. Add people opens
