@@ -27,9 +27,14 @@
   h1 { font-size: 1.9rem; margin: 22px 0 10px; }
   p { color: var(--dim); max-width: 30rem; line-height: 1.5; }
   a.store {
-    display: inline-block; margin-top: 26px; padding: 14px 30px;
-    background: var(--ink); color: #14132a; border-radius: 999px;
-    font-weight: 700; text-decoration: none; font-size: 1.05rem;
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 26px; padding: 12px 22px;
+    background: rgba(140,145,250,0.13); border: 1px solid rgba(140,145,250,0.4);
+    color: var(--ink); border-radius: 999px;
+    font-weight: 650; text-decoration: none; font-size: 1rem;
+  }
+  a.store .dot {
+    width: 9px; height: 9px; border-radius: 50%; background: #59d985;
   }
   ol {
     color: var(--dim); max-width: 30rem; line-height: 1.6;
@@ -50,7 +55,7 @@ Cuebird isn't on your phone yet.</p>
   <li>Open it once.</li>
   <li>Ask them to show you the code again, and scan it.</li>
 </ol>
-<a class="store" href="https://apps.apple.com/us/app/cuebird/id6794488497">Get Cuebird on the App&nbsp;Store</a>
+<a class="store" href="https://apps.apple.com/us/app/cuebird/id6794488497"><span class="dot" aria-hidden="true"></span>Download on the App&nbsp;Store · $0.99</a>
 <p class="small">In their Family Sharing group? Cuebird is free for you.
 Otherwise it's one dollar, once, and they can gift it to you instead.</p>
 </body>
