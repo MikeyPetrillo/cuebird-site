@@ -3,27 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Answers about Cuebird: alarms through Silent, households and invites, out the door time, Apple Watch, iCloud, streaks, and privacy.">
 <title>Cuebird FAQ</title>
+<link rel="icon" href="cue.png">
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    color-scheme: light dark;
+    --ink: #1c1c2e;
+    --bg: #f7f6fb;
+    --dim: #5c5b70;
+    --lav: #6b5ce7;
+  }
   body {
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    max-width: 640px; margin: 0 auto; padding: 48px 24px;
-    color: #1c1c2e; background: #fdfdfe;
+    font: 17px/1.6 ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 640px; margin: 0 auto; padding: 40px 24px 48px;
+    color: var(--ink); background: var(--bg);
   }
   @media (prefers-color-scheme: dark) {
-    body { color: #ececf4; background: #17162a; }
-    a { color: #9d8cff; }
+    :root { --ink: #ececf4; --bg: #17162a; --dim: #a5a3b8; --lav: #9d8cff; }
   }
-  h1 { font-size: 1.8em; margin-bottom: 0.2em; }
-  h2 { font-size: 1.2em; margin-top: 1.6em; }
-  a { color: #6b5ce7; }
-  footer { margin-top: 48px; font-size: 0.85em; color: #8a8a9a; }
+  .top {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 28px; font-size: 0.95rem;
+  }
+  .top img { width: 36px; height: auto; }
+  .top a { color: var(--lav); text-decoration: none; font-weight: 650; }
+  .top a:hover { text-decoration: underline; }
+  h1 { font-size: 1.8em; margin: 0 0 0.35em; letter-spacing: -0.02em; }
+  .intro { color: var(--dim); margin: 0 0 1.2em; }
+  h2 { font-size: 1.15em; margin-top: 1.7em; letter-spacing: -0.01em; }
+  a { color: var(--lav); }
+  footer { margin-top: 48px; font-size: 0.85em; color: var(--dim); }
+  footer a { text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
+<div class="top">
+  <img src="cue.png" alt="">
+  <a href="index.html">Cuebird</a>
+</div>
+
 <h1>Cuebird FAQ</h1>
+<p class="intro">Plain answers for the questions support actually gets.</p>
 
 <h2>What is Cuebird?</h2>
 <p>A routine timer for brains that don't feel time. You break a routine
@@ -42,19 +63,6 @@ instead, because Macs don't have that alarm system.</p>
 When you come back, you're exactly where the routine really is, and the Lock
 Screen countdown keeps you posted along the way.</p>
 
-<h2>What is "out the door time"?</h2>
-<p>An optional finish line for a routine, like out the door by 7:05. It never
-rings. Cuebird uses it to show whether your steps still fit the time you have,
-so you can see at a glance if you are running behind. Add one in the routine's
-editor, under "When you need to be done."</p>
-
-<h2>What if I don't use iCloud?</h2>
-<p>Your routines, timers, alarms and history all still work on this device.
-What needs iCloud is the parts that travel between people or devices:
-households, and syncing your routines to your other Apple devices. Turn iCloud
-on for Cuebird and those switch themselves on too. Nothing is lost while it is
-off.</p>
-
 <h2>How do I send a routine to someone?</h2>
 <p>Open the routine and tap the share icon. It travels as a link; when your
 person taps it, Cuebird opens and offers the routine, steps and colors
@@ -68,9 +76,9 @@ subscription and nothing to unlock.</p>
 
 <h2>What does Cuebird know about me?</h2>
 <p>Nothing. No account, no analytics, no ads, no trackers, no servers. Your
-routines and history live on your device and in your own iCloud. The full
-details are in the <a href="privacy.html">privacy policy</a>, which is short
-on purpose.</p>
+routines and history live on your device and in your own iCloud. Households
+stay end-to-end encrypted. The full details are in the
+<a href="privacy.html">privacy policy</a>, which is short on purpose.</p>
 
 <h2>New phone. Where are my routines?</h2>
 <p>They follow your iCloud account. Install Cuebird, and your routines and
@@ -81,12 +89,18 @@ history arrive on their own. No login, because there are no accounts.</p>
 up, not to punish you for resting. Cuebird never shows a score that shames
 you, and that's a design rule, not an accident.</p>
 
-<h2>What is a household?</h2>
+<h2 id="household">What is a household?</h2>
 <p>A link between the people you live with. When one of you starts a routine,
 everyone else gets a gentle offer to jump in, and joining drops you exactly
 where the others already are rather than back at step one. Declining is
 silent: nobody is told whether you joined, so there is nothing to explain and
-nothing to feel bad about.</p>
+nothing to feel bad about. In 2.0, a household lives in its own shared,
+end-to-end encrypted space and does not use your iCloud storage.</p>
+
+<h2>I had a household before 2.0. Where did it go?</h2>
+<p>Households work a new way now, so an older household needs setting up once
+more: start a new one, or ask someone for a fresh invite. All of your routines
+are still here.</p>
 
 <h2>Does everyone need to buy Cuebird?</h2>
 <p>Everyone needs the app, but Family Sharing covers up to six family members
@@ -101,30 +115,33 @@ came from a household say which one on your list.</p>
 <h2>Who is in charge of a household?</h2>
 <p>Whoever started it, and anyone they make an organizer. Tap someone who has
 joined and you can hand them the same controls, so it is not all on one
-person. Only the person who started the household can promote people, which
-is enforced by how the household is encrypted rather than by trust.</p>
+person.</p>
 
-<h2>What happens when an organizer pauses?</h2>
-<p>Everyone who joined that run pauses with them, and a skip moves everyone
-along, so nobody is left three steps behind wondering what happened. If you
-would rather go at your own speed, "Take my own pace" is one tap and your
-routine simply keeps running. Nobody is told you did it, and you can do it at
-any point.</p>
+<h2>What does "do it together" mean?</h2>
+<p>In the same room, everyone starts on a shared 3, 2, 1, and a pause, a skip,
+or a minute back moves the whole group at once, so nobody is left behind.
+Near each other it is instant. Apart, it stays in sync across your household.
+If you would rather go at your own speed, "Take my own pace" is one tap and
+your routine simply keeps running. Nobody is told you did it.</p>
+
+<h2>Can a routine start out shared?</h2>
+<p>Yes. When you make a routine, Cuebird offers your households right there, so
+it can begin life shared instead of being made and then shared later.</p>
 
 <h2>How do I invite someone, and how do I leave?</h2>
-<p>Both live behind the household button on the home screen. Add people shows a
-code the person can scan with their camera while that screen is up, or you can
-send them a link instead: they tap it and they are in, even if your phone is
-closed. Leaving, or deleting a household you started, is one tap in the same
-place, and your copies of the routines stay yours afterwards.</p>
+<p>Both live behind the household button on the home screen. You can send an
+invite link by text, so they join the moment they tap it, even if your phone
+is closed. Together in person, show the QR code on your screen for them to
+scan. Leaving is one tap in the same place, and your copies of the routines
+stay yours afterwards.</p>
 
 <h2>Who can see what I do?</h2>
 <p>Almost nothing. A start carries the routine's steps, the name you chose for
 yourself, and the time it started. Nobody learns whether you joined, whether
 you finished, or how long anything took you. Your history, your timings and
-your voice recordings never leave your device. What a household shares is
-end-to-end encrypted before it leaves your phone, so only the people in your
-household can read it. Cuebird has no servers and cannot read any of it.</p>
+your voice recordings never leave your device. Your own routines sync through
+your private iCloud. Households stay end-to-end encrypted: Cuebird has no
+servers and cannot read any of it.</p>
 
 <h2>Can I use my Apple Watch?</h2>
 <p>Yes. The current step, its color and the countdown are on your wrist, and
@@ -134,28 +151,27 @@ if your watch loses touch with your phone.</p>
 <h2>Can Cuebird warn me about a meeting?</h2>
 <p>Yes, if you turn on calendar awareness in Settings. When a routine will not
 finish before your next event, one line says so on the routine and again while
-you are running it, and tapping the line shows the meeting without taking you
-out of the timer. iOS has no read-only calendar permission, so it asks for full
+you run it, and tapping the line shows you the meeting without taking you out
+of the timer. iOS has no read-only calendar permission, so it asks for full
 access, but Cuebird only ever reads. Nothing from your calendar is stored,
 sent, or shown to your household.</p>
 
 <h2>What does the sleep line do?</h2>
-<p>If you turn Health on, a wind-down routine shows the time you usually fall
+<p>With Health turned on, a wind-down routine shows the time you usually fall
 asleep beside the time it would finish, so you can see whether tonight's
 version leaves you enough runway. It reads sleep from Apple Health on your
-phone and writes nothing back. It needs a few nights of data before it can say
-anything, and until then it says so rather than showing you a number it made
-up.</p>
+phone and writes nothing back. It needs a few nights of data first, and until
+then it says so rather than showing you a number it made up.</p>
 
 <h2>Can I have background sound?</h2>
 <p>Rain, waves, and brown noise are built in, and a routine can play one while
-it runs. If you start your own music, the soundscape steps aside and comes back
+it runs. Start your own music and the soundscape steps aside, then comes back
 when you stop. Voice cues still speak over it.</p>
 
 <h2>Can I start a routine without opening the app?</h2>
-<p>Yes. Add the widget to your Home Screen, or the control to your Lock Screen
-or Control Center, and one tap starts the routine you picked. The alarm you set
-for a routine can also start it for you when it rings.</p>
+<p>Yes. Put the widget on your Home Screen, or the control on your Lock Screen
+or in Control Center, and one tap starts the routine you picked. A routine's
+alarm can also start it for you when it rings.</p>
 
 <h2>What are Quick Timer and Ring Me At?</h2>
 <p>Quick Timer is a bare countdown with the full Cuebird treatment: full

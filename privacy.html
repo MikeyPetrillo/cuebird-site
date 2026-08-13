@@ -3,27 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Cuebird collects nothing: no accounts, analytics, ads, or servers of its own. How your routines are stored, what a household shares, and the permissions the app asks for.">
 <title>Cuebird Privacy Policy</title>
+<link rel="icon" href="cue.png">
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    color-scheme: light dark;
+    --ink: #1c1c2e;
+    --bg: #f7f6fb;
+    --dim: #5c5b70;
+    --lav: #6b5ce7;
+  }
   body {
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    max-width: 640px; margin: 0 auto; padding: 48px 24px;
-    color: #1c1c2e; background: #fdfdfe;
+    font: 17px/1.6 ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 640px; margin: 0 auto; padding: 40px 24px 48px;
+    color: var(--ink); background: var(--bg);
   }
   @media (prefers-color-scheme: dark) {
-    body { color: #ececf4; background: #17162a; }
-    a { color: #9d8cff; }
+    :root { --ink: #ececf4; --bg: #17162a; --dim: #a5a3b8; --lav: #9d8cff; }
   }
-  h1 { font-size: 1.8em; margin-bottom: 0.2em; }
-  h2 { font-size: 1.2em; margin-top: 1.6em; }
-  .updated { color: #8a8a9a; margin-top: 0; }
-  a { color: #6b5ce7; }
-  footer { margin-top: 48px; font-size: 0.85em; color: #8a8a9a; }
+  .top {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 28px; font-size: 0.95rem;
+  }
+  .top img { width: 36px; height: auto; }
+  .top a { color: var(--lav); text-decoration: none; font-weight: 650; }
+  .top a:hover { text-decoration: underline; }
+  h1 { font-size: 1.8em; margin-bottom: 0.2em; letter-spacing: -0.02em; }
+  h2 { font-size: 1.15em; margin-top: 1.6em; letter-spacing: -0.01em; }
+  .updated { color: var(--dim); margin-top: 0; }
+  a { color: var(--lav); }
+  footer { margin-top: 48px; font-size: 0.85em; color: var(--dim); }
+  footer a { text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
+<div class="top">
+  <img src="cue.png" alt="">
+  <a href="index.html">Cuebird</a>
+</div>
 <h1>Cuebird Privacy Policy</h1>
 <p class="updated">Last updated: August 13, 2026</p>
 
@@ -31,7 +49,8 @@
 <p><strong>Cuebird collects nothing.</strong> There are no accounts, no
 analytics, no advertising, no trackers, and no third-party SDKs. Your routines
 and your run history never reach us, because there is no "us" to reach.
-Cuebird runs no servers of its own.</p>
+Cuebird runs no servers of its own. Your own routines sync through your
+private iCloud. Households stay end-to-end encrypted.</p>
 <p>Cuebird is made by <strong>Michael Petrillo</strong>, an individual
 developer, who is the party responsible for the app (the data controller, in
 GDPR terms) and can be reached at
@@ -45,19 +64,20 @@ lives in places that belong to you:</p>
 <ul>
   <li><strong>On your device</strong>, in the app's private storage.</li>
   <li><strong>In your own iCloud account</strong>, via Apple's iCloud
-  key-value storage, so your routines survive deleting the app or moving to a
-  new phone, and stay in sync across your devices.</li>
-  <li><strong>In a shared, end-to-end encrypted space, only if you join a
+  key-value storage, so your personal routines survive deleting the app or
+  moving to a new phone, and stay in sync across your devices.</li>
+  <li><strong>In an end-to-end encrypted household space, only if you join a
   household</strong>: what your household shares is encrypted on your device
   before it leaves, stored in a shared database Apple runs, and readable only
-  by the people in your household. It does not use your own iCloud storage. See
-  "Data shared with others" below.</li>
+  by the people in your household. It does not use your own iCloud storage.
+  See "Data shared with others" below.</li>
 </ul>
-<p>iCloud sync uses your Apple Account. Your data is stored in your personal
-iCloud container and is governed by
+<p>Personal iCloud sync uses your Apple Account. That data is stored in your
+personal iCloud container and is governed by
 <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.
 The developer of Cuebird cannot see, access, or retrieve it. If you disable
-iCloud, Cuebird keeps working with on-device storage only.</p>
+iCloud, Cuebird keeps working with on-device storage only; households still
+use their own encrypted space when you opt into them.</p>
 
 <h2>Data shared with others</h2>
 <p>Nothing is shared unless you choose to share it. Cuebird does not transmit
@@ -89,10 +109,10 @@ your information to the developer or to any third party.</p>
   generic "Something new in your household." When you are in the same room,
   your phones can also stay in step directly over the local network, which
   never leaves the room. Nobody in the household is told whether you joined a
-  routine, and neither the developer nor anyone else can read the
-  contents of what you share. You can leave any household at any time from the
-  household screen; leaving removes your access, and deleting a household you
-  started removes its shared area for everyone.</li>
+  routine, and neither the developer nor anyone else can read the contents of
+  what you share. You can leave any household at any time from the household
+  screen; leaving removes your access, and deleting a household you started
+  removes its shared area for everyone.</li>
 </ul>
 <p>One technical note for completeness: once a day the app asks Apple's public
 App Store catalog whether a newer version of Cuebird exists, so it can offer
@@ -113,8 +133,8 @@ developer never sees it.</p>
   another member acts, and carry no name or routine title. Focus and Do Not
   Disturb silence them like anything else.</li>
   <li><strong>Local network</strong>: only while you run a routine together
-  with people in the same room, so your phones can stay in step directly. It is
-  used for nothing else, and it never leaves the room.</li>
+  with people in the same room, so your phones can stay in step directly. It
+  is used for nothing else, and it never leaves the room.</li>
   <li><strong>Calendar</strong> (optional, off by default): if you turn on
   calendar awareness in Settings, Cuebird reads your calendar on your device
   to warn you when a routine will not finish before your next event. iOS has
@@ -123,10 +143,10 @@ developer never sees it.</p>
   sent anywhere, and nobody in your household ever sees it.</li>
   <li><strong>Health</strong> (optional, off by default): if you turn on the
   sleep rhythm line in Settings, Cuebird reads sleep data from Apple Health on
-  your device to show the time you usually fall asleep beside
-  a wind-down routine's schedule. Cuebird never writes to Health. Nothing from
-  Health is stored elsewhere, synced, or sent anywhere, and nobody in your
-  household ever sees it.</li>
+  your device to show the time you usually fall asleep beside a wind-down
+  routine's schedule. Cuebird never writes to Health. Nothing from Health is
+  stored elsewhere, synced, or sent anywhere, and nobody in your household
+  ever sees it.</li>
 </ul>
 <p>Cuebird does not request access to your contacts, photos, location,
 or camera.</p>
@@ -139,23 +159,18 @@ anyone, including children under 13.</p>
 <p>Deleting the app removes its on-device data. To also remove the iCloud
 copy, turn off iCloud for Cuebird in <strong>Settings → [your name] →
 iCloud</strong>, or delete the app's iCloud data from that screen.</p>
-<p>For households: leaving a household (on Cuebird's household screen) removes your
-access to its shared area. If you created the household, deleting it removes
-the shared area and everything in it for everyone. Starts you announced are
-overwritten by newer ones either way.</p>
+<p>For households: leaving a household (on Cuebird's household screen) removes
+your access to its encrypted shared space. If you created the household,
+deleting it removes that space and everything in it for everyone. Starts you
+announced are overwritten by newer ones either way.</p>
 
 <h2>Your rights (GDPR and similar laws)</h2>
-<p>Michael Petrillo, the individual developer of Cuebird, is the data
-controller. Because we collect and hold no readable personal content about you, there is almost nothing for
-us to access, correct, export, or delete. Your routines and history live only
-on your devices and in your personal iCloud account, which you control
-directly. The one exception is the small amount of unencrypted routing data a
-household leaves in Apple's shared database (which encrypted records belong to
-which household, member public keys, and timestamps); if you want that removed,
-leave the household, or, if you started it, delete it, and ask us at the
-address below if anything appears to remain. Payments are processed by Apple as
-the merchant; refunds and the EU 14-day right of withdrawal are handled through
-Apple. For any privacy question, contact
+<p>Because Cuebird's developer collects and holds no personal data about you,
+there is nothing for us to access, correct, export, or delete. Your routines
+and history live only on your devices and in your personal iCloud account,
+which you control directly. Payments are processed by Apple as the merchant;
+refunds and the EU 14-day right of withdrawal are handled through Apple.
+For any privacy question, contact
 <a href="mailto:support@cuebird.net">support@cuebird.net</a>.</p>
 
 <h2>This website</h2>
@@ -175,6 +190,7 @@ with a new "last updated" date.</p>
   <a href="index.html">Cuebird</a> ·
   <a href="faq.html">FAQ</a> ·
   <a href="mailto:support@cuebird.net">Contact</a><br>
-  Copyright © 2026 Michael Petrillo. All rights reserved.</footer>
+  Copyright © 2026 Michael Petrillo. All rights reserved.
+</footer>
 </body>
 </html>

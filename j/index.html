@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Join a Cuebird household</title>
-<meta name="description" content="Open this in Cuebird to join the household. New to Cuebird? Get it, then tap the link again.">
+<title>Someone wants you in their Cuebird household</title>
+<meta name="description" content="Somebody is inviting you into their Cuebird household. Get Cuebird, then open their invite again.">
 <meta property="og:title" content="Join a Cuebird household">
-<meta property="og:description" content="Open this in Cuebird to join. If you are in their Family Sharing group, it costs you nothing.">
+<meta property="og:description" content="Get Cuebird, then open their invite link or scan their code again. If you are in their Family Sharing group, it costs you nothing.">
 <meta property="og:image" content="https://cuebird.net/cue.png">
 <meta property="og:url" content="https://cuebird.net/j">
 <link rel="icon" href="../cue.png">
@@ -26,57 +26,37 @@
   img.cue { width: 140px; height: auto; }
   h1 { font-size: 1.9rem; margin: 22px 0 10px; }
   p { color: var(--dim); max-width: 30rem; line-height: 1.5; }
-  a.btn {
-    display: inline-block; margin-top: 24px; padding: 15px 34px;
-    border-radius: 999px; font-weight: 700; text-decoration: none; font-size: 1.08rem;
+  a.store {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 26px; padding: 12px 22px;
+    background: rgba(140,145,250,0.13); border: 1px solid rgba(140,145,250,0.4);
+    color: var(--ink); border-radius: 999px;
+    font-weight: 650; text-decoration: none; font-size: 1rem;
   }
-  a.open { background: var(--lav); color: #14132a; }
-  a.store { background: var(--ink); color: #14132a; }
-  a.store.secondary { background: transparent; color: var(--dim);
-    border: 1px solid #3a3856; font-weight: 600; font-size: 0.98rem; padding: 12px 26px; }
-  .row { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-  p.small { font-size: 0.85rem; margin-top: 22px; }
-  #haveApp, #noFrag { display: none; }
+  a.store .dot {
+    width: 9px; height: 9px; border-radius: 50%; background: #59d985;
+  }
+  ol {
+    color: var(--dim); max-width: 30rem; line-height: 1.6;
+    margin: 22px auto 0; text-align: left; padding-left: 1.2rem;
+  }
+  li { margin-bottom: 6px; }
+  p.small { font-size: 0.85rem; margin-top: 20px; }
 </style>
 </head>
 <body>
 <img class="cue" src="../cue.png" alt="Cue, the Cuebird mascot">
-<h1>Join their Cuebird household</h1>
-<p>A household means you can start a routine together and see the same clock,
-from anywhere in the house.</p>
-
-<div id="haveApp" class="row">
-  <a id="openLink" class="btn open" href="#">Open in Cuebird</a>
-  <p class="small">Already have Cuebird? This opens it and adds you.
-  New to Cuebird? Get it below, open it once, then tap this link again.</p>
-  <a class="btn store secondary" href="https://apps.apple.com/us/app/cuebird/id6794488497">Get Cuebird</a>
-</div>
-
-<div id="noFrag" class="row">
-  <p>Get Cuebird, open it once, then ask them to show you the code again.</p>
-  <a class="btn store" href="https://apps.apple.com/us/app/cuebird/id6794488497">Get Cuebird on the App&nbsp;Store</a>
-</div>
-
+<h1>Someone wants you in their household</h1>
+<p>A Cuebird household means you can start a routine together and see
+the same clock, from anywhere in the house. If you're reading this page,
+Cuebird isn't on your phone yet.</p>
+<ol>
+  <li>Get Cuebird below.</li>
+  <li>Open it once.</li>
+  <li>Open their invite link again, or ask them to show the code and scan it.</li>
+</ol>
+<a class="store" href="https://apps.apple.com/us/app/cuebird/id6794488497"><span class="dot" aria-hidden="true"></span>Download on the App&nbsp;Store · $0.99</a>
 <p class="small">In their Family Sharing group? Cuebird is free for you.
 Otherwise it's one dollar, once, and they can gift it to you instead.</p>
-
-<script>
-  // The invite payload rides the fragment, which the browser keeps on the
-  // device and never sends to any server. Read it here and build the
-  // cuebird:// twin, which opens the app reliably: a tap on the same
-  // domain's universal link would only reload this page. If Cuebird is not
-  // installed, tapping does nothing loud and the Get Cuebird button is right
-  // there. Nothing is sent anywhere; this is all client side.
-  (function () {
-    var frag = (location.hash || "").replace(/^#/, "");
-    var looksLikeInvite = frag.indexOf(".") > 0;
-    if (looksLikeInvite) {
-      document.getElementById("openLink").href = "cuebird://j#" + frag;
-      document.getElementById("haveApp").style.display = "flex";
-    } else {
-      document.getElementById("noFrag").style.display = "flex";
-    }
-  })();
-</script>
 </body>
 </html>
